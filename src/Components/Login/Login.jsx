@@ -52,6 +52,16 @@ const Login = (props) => {
       passwordSignupRef.current.value
     )
       .then((userCredential) => {
+        fetch("http://localhost:8800/api/auth/register", {
+          method: "POST",
+          body: JSON.stringify({
+            email: emailSignupRef.current.value,
+            password: passwordSignupRef.current.value,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((res) => console.log(res));
         if (auth.currentUser.email) {
           sessionStorage.setItem("data", auth.currentUser.email);
         }
@@ -94,7 +104,7 @@ const Login = (props) => {
     <>
       <div className="image">
         <img
-          src="https://wallpaperaccess.com/full/271873.jpg"
+          src="https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
           alt=""
           className="backgroundImage"
         />

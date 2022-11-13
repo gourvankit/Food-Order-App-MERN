@@ -12,6 +12,7 @@ import {
   Route,
   useNavigate,
 } from "react-router-dom";
+import Order from "./Components/Cart/Order";
 
 function App() {
   const navigate = useNavigate();
@@ -73,6 +74,18 @@ function App() {
                 <main>
                   <Meals></Meals>
                 </main>
+              </CartProvider>
+            ) : (
+              <Login login={loginHandler} logout={logoutHandler} />
+            )
+          }
+        ></Route>
+        <Route
+          path="/order"
+          element={
+            loggedIn ? (
+              <CartProvider>
+                <Order />
               </CartProvider>
             ) : (
               <Login login={loginHandler} logout={logoutHandler} />

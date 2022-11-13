@@ -14,15 +14,24 @@
   z-index: 10;
 }
 .logoutbtn {
-  padding: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: black;
-  background-color: #ab6f57;
-  border-radius: 10px;
-  font-size: 20px;
   cursor: pointer;
+  font: inherit;
   border: none;
+  background-color: #4d1601;
+  color: white;
+  padding: 0.95rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-left: -550px;
+}
+.logoutbtn:hover {
+  background-color: #2c0d00;
+}
+.header h1 {
+  color: white;
 }
 .main-image {
   width: 100%;
